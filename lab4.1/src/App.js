@@ -4,6 +4,8 @@ import NavBar from './components/navBar';
 import NewsCarousel from './components/news/newsCarousel';
 import NewsHeading from './components/news/newsHeading';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import TodoElement from './components/todo/todoElement';
+import TodoList from './components/todo/todoList';
 
 function App() {
   return (
@@ -26,8 +28,8 @@ function App() {
             </div>
           }>
           </Route>
-          <Route path="/todos" element={
-            <div>ку</div>
+          <Route path="/todo" element={
+            <div><TodoList /></div>
           }></Route>
         </Routes>
       </div>

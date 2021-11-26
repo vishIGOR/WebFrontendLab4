@@ -9,7 +9,7 @@ function NavBar() {
                 <Navbar.Collapse id="navbar_menu">
                     <Nav className="navbar-nav">
                         <Nav.Link className="nav-link active" href="/">News</Nav.Link>
-                        <Nav.Link className="nav-link" href="/todos">ToDo lists</Nav.Link>
+                        <Nav.Link className="nav-link" href="/todo">ToDo lists</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </div>

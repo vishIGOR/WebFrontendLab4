@@ -1,13 +1,8 @@
 import { Card, Row, Col } from "react-bootstrap";
-import {setLikeActionCreator} from "./../../reducers/news-reducer.js";
-// import {useDispatch} from "react-redux";
 
 function NewsItem(props) {
-    let likes = props.likes
-    // const dispatch = useDispatch();
 
     const setLike = () =>{
-        // dispatch(setLikeActionCreator(props.id));
         console.log(props.id);
     }
 
@@ -36,7 +31,7 @@ function NewsItem(props) {
                             <div className="text-muted">{props.date.substr(0, 10)}</div>
                         </div>
                         <div className="col-xs-12 col-sm d-flex flex-row-reverse">
-                            <em>{likes} <i className="text-danger fas fa-heart ml-2 news-like-symbol" onClick={setLike}></i></em>
+                            <em>{props.likes} <i className="text-danger fas fa-heart ml-2 news-like-symbol" onClick={setLike}></i></em>
                         </div>
                     </Row>
                 </div>

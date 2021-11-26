@@ -33,6 +33,14 @@ export function loadNewsThunkCreator() {
     }
 }
 
+export function setLikeThunkCreator(){
+    return(dispatch) =>{
+        newsApi.setLike().then(data =>{
+            dispatch(loadNewsActionCreator(data));
+        })
+    }
+}
+
 export function setLikeActionCreator(id) {
     return { type: SET_LIKE, id: id }
 }
