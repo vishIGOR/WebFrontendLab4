@@ -12,7 +12,7 @@ function NewsRoute() {
                     <NewsContainer />
                 </div>
             </div>
-            <div className="news-footer">
+            <div className="footer">
                 <div>Footer</div>
             </div>
         </div>
