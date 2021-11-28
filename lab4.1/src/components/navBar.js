@@ -1,4 +1,5 @@
 import { Navbar, Nav,} from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
     return (
@@ -7,9 +8,9 @@ function NavBar() {
                 <Navbar.Brand href="#">Navbar</Navbar.Brand >
                 <Navbar.Toggle aria-controls="navbar_menu" />
                 <Navbar.Collapse id="navbar_menu">
-                    <Nav className="navbar-nav">
-                        <Nav.Link className="nav-link active" href="/">News</Nav.Link>
-                        <Nav.Link className="nav-link" href="/todo">ToDo lists</Nav.Link>
+                    <Nav className="me-auto">
+                        <NavLink exact to="/" className="nav-link" >News</NavLink>
+                        <NavLink to="/todo" className="nav-link" >ToDo lists</NavLink>
                     </Nav>
                 </Navbar.Collapse>
             </div>
