@@ -4,23 +4,9 @@ function TodoElement(props) {
 
 
     return (
-        // <Card className="w-100">
-        //     <Row className="row no-gutters">
-        //         <Col className="badge-warning" style="max-width:10px;"></Col>
-        //         <Col>
-        //             <Card.Body className="container">
-        //                 <Row className="align-items-center">
-        //                     <div className="col-md-cen"></div>
-        //                 </Row>
-        //             </Card.Body>
-        //         </Col>
-        //     </Row>
-
-        // </Card>
         <Col className="card w-100" xs={12}>
             <Row className="no-gutters">
-                <Col className="bg-warning pl-0 pr-0" style={{ maxWidth: 10 + 'px', padding: "0 0 0 0 "}}>
-                </Col>
+                <Col className="bg-warning pl-0 pr-0" style={{ maxWidth: 10 + 'px', padding: "0 0 0 0 " }}></Col>
                 <Col>
                     <div className="card-body container">
                         <div className="row">
