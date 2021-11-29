@@ -3,15 +3,15 @@ import TodoList from "./todoList";
 
 function TodoRoute() {
     return (
-        <div className="route">
+        <div className="d-flex flex-column">
             <div className="content">
                 <div className="container-lg">
-                    <TodoList></TodoList>
+                    {/* <TodoListWrapper></TodoListWrapper> */}
                 </div>
             </div>
-            <div className="footer">
+            <footer className="footer">
                 <div>Footer</div>
-            </div>
+            </footer>
         </div>
     )
 
