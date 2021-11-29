@@ -2,12 +2,13 @@ import { todoApi } from "../api/todoApi";
 
 
 const LOAD_TODO = "LOAD_TODO";
+const AUTH_TODO = "AUTH_TODO";
 
-let initialState={
-    todoLists:[]
+let initialState = {
+    todoLists: []
 }
 
-const todoReducer = (state = initialState, action) =>{
+const todoReducer = (state = initialState, action) => {
     let newState = { ...state };
     switch (action.type) {
         case LOAD_TODO:
@@ -18,16 +19,17 @@ const todoReducer = (state = initialState, action) =>{
     }
 }
 
-export function loadTodoListsActionCreator(todoLists){
-    return{type:LOAD_TODO, todoLists: todoLists}
+export function loadTodoListsActionCreator(todoLists) {
+    return { type: LOAD_TODO, todoLists: todoLists }
 }
 
-export function loadTodoListsThunkCreator(){
-    return (dispatch) =>{
-        todoApi.getTodoLists().then(data =>{
+export function loadTodoListsThunkCreator() {
+    return (dispatch) => {
+        todoApi.getTodoLists().then(data => {
             dispatch(loadTodoListsActionCreator(data));
         })
     }
 }
 
-export default todoReducer;
+export
+    export default todoReducer;

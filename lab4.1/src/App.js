@@ -3,20 +3,28 @@ import NavBar from './components/navBar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NewsRoute from './components/news/newsRoute';
 import TodoRoute from './components/todo/todoRoute';
+import React from 'react';
+import authorize from './api/todoApi';
 
-function App() {
-  return (
-    <BrowserRouter>
-      <div className="App">
-        <NavBar />
-        <Routes>
-          <Route exact path="/" element={<NewsRoute />}></Route>
-          <Route path="/todo" element={<TodoRoute />}></Route>
-        </Routes>
-      </div>
-    </BrowserRouter>
-
-  );
+class App extends React.Component {
+  async componentDidMount(){
+    await authorize();
+  }
+  render(){
+    return (
+      <BrowserRouter>
+        <div className="App">
+          <NavBar />
+          <Routes>
+            <Route exact path="/" element={<NewsRoute />}></Route>
+            <Route path="/todo" element={<TodoRoute />}></Route>
+          </Routes>
+        </div>
+      </BrowserRouter>
+  
+    );
+  }
+  
 }
 
 export default App;

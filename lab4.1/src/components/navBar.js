@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 function NavBar() {
     return (
-        <Navbar collapseOnSelect expand="lg" className="navbar-dark bg-dark">
+        <Navbar collapseOnSelect expand="sm" className="navbar-dark bg-dark">
             <div className="container-fluid">
                 <Navbar.Brand href="#">Navbar</Navbar.Brand >
                 <Navbar.Toggle aria-controls="navbar_menu" />
