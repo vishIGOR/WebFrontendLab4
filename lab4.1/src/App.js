@@ -4,11 +4,11 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NewsRoute from './components/news/newsRoute';
 import TodoRoute from './components/todo/todoRoute';
 import React from 'react';
-import authorize from './api/todoApi';
+import authorize, { todoApi } from './api/todoApi';
 
 class App extends React.Component {
-  async componentDidMount(){
-    await authorize();
+  componentDidMount(){
+    authorize();
   }
   render(){
     return (

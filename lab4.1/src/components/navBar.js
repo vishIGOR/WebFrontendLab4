@@ -9,7 +9,7 @@ function NavBar() {
                 <Navbar.Toggle aria-controls="navbar_menu" />
                 <Navbar.Collapse id="navbar_menu">
                     <Nav className="me-auto">
-                        <NavLink exact to="/" className="nav-link" >News</NavLink>
+                        <NavLink to="/" className="nav-link" >News</NavLink>
                         <NavLink to="/todo" className="nav-link" >ToDo lists</NavLink>
                     </Nav>
                 </Navbar.Collapse>

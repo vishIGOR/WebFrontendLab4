@@ -1,38 +1,41 @@
 import * as axios from 'axios';
 
-const baseURL = "https://sas.front.kreosoft.space/api/";
+// const baseURL = "https://sas.front.kreosoft.space/api/";
 
 const instance = axios.create({
-    baseURL: baseURL
+    baseURL: "https://sas.front.kreosoft.space/api/"
 });
 
 function getTodoLists() {
-    return instance.get('ToDoList')
+    let token = 'Bearer ' + localStorage.getItem("todoToken");
+
+    return instance.get('ToDoList', 
+    { headers: {"Authorization" : token} })
         .then(response => {
             if (response.status === 200) {
                 return response.data;
             }
         })
         .catch(error => {
-            console.lof(error.response.data.error);
+            console.log(error.response.data.error);
         })
 }
 
 function authorize() {
     return instance.post('auth', JSON.stringify({
-        username: "u123",
-        password: "p123"
+        "username": "admin_vish",
+        "password": "password_vish"
     }), {
         headers: {
             'Content-Type': 'application/json',
         }
     })
         .then(response => {
-            return response.json();
+            return response.data;
         })
         .then((json) => {
             localStorage.setItem("todoToken", json.accessToken);
-            console.log("successful authorization")
+            console.log("successful authorization ",localStorage.getItem("todoToken"))
         })
         .catch(error => console.error(error))
 

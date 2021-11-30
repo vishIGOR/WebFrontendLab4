@@ -31,5 +31,4 @@ export function loadTodoListsThunkCreator() {
     }
 }
 
-export
-    export default todoReducer;
+export default todoReducer;
