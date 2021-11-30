@@ -33,3 +33,7 @@
 .news-like-symbol:hover{
   cursor: pointer;
 }
+
+.color-black {
+  color:black !important;
+}

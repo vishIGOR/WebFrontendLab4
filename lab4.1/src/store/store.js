@@ -4,8 +4,9 @@ import ThunkMiddleware from "redux-thunk";
 import todoReducer from "../reducers/todo-reducer";
 
 let reducers = combineReducers({
-    newsPage: newsReducer,
-    todoPage: todoReducer
+    todoPage: todoReducer,
+    newsPage: newsReducer
+    
 });
 
 let store = createStore(reducers, applyMiddleware(ThunkMiddleware));

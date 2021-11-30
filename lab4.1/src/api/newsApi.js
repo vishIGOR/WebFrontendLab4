@@ -1,7 +1,5 @@
 import * as axios from 'axios';
 
-// const baseURL = "https://sas.front.kreosoft.space/api/";
-
 const instance = axios.create({
     baseURL: "https://sas.front.kreosoft.space/api/"
 });
@@ -14,12 +12,24 @@ function getNews() {
             }
         })
         .catch(error => {
-            console.lof(error.response.data.error);
+            console.log(error.response.data.error);
         })
 }
 
 function setLike(id) {
-    
+    return instance.post('news/like', JSON.stringify({
+        id: id
+    }), {
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+        .then(response => {
+            if (response.status === 200) {
+                console.log("liked")
+            }
+        })
+        .catch(error => console.error(error))
 }
 
 export const newsApi = {

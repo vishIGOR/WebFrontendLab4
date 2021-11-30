@@ -1,4 +1,4 @@
-import { Card, Row, Col, Badge, Button, Form } from "react-bootstrap";
+import { Card, Row, Badge, Button, Form } from "react-bootstrap";
 
 function TodoLegend() {
     return (

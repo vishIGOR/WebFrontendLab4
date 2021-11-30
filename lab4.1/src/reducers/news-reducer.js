@@ -14,7 +14,7 @@ const newsReducer = (state = initialState, action) => {
             newState.news = action.news;
             return newState;
         case SET_LIKE:
-            newState.likes = action.likes;
+            newState.news = action.news;
             return newState;
         default:
             return newState;
@@ -39,10 +39,6 @@ export function setLikeThunkCreator(){
             dispatch(loadNewsActionCreator(data));
         })
     }
-}
-
-export function setLikeActionCreator(id) {
-    return { type: SET_LIKE, id: id }
 }
 
 export default newsReducer;

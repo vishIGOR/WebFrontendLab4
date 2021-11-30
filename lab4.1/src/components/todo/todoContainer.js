@@ -1,11 +1,12 @@
-import React from "react";
-import { loadTodoListsThunkCreator } from "../../reducers/todo-reducer";
-import TodoListWrapper from "./todoListWrapper";
 import { connect } from "react-redux";
+import React from "react";
+import TodoListWrapper from "./todoListWrapper";
+import { loadTodoListsThunkCreator } from "../../reducers/todo-reducer";
 
 class MiddleTodoListsComponent extends React.Component {
     componentDidMount() {
         this.props.loadTodoListsThunkCreator();
+        console.log(this.props);
     }
     render() {
         return (<TodoListWrapper {...this.props} />)
@@ -13,7 +14,7 @@ class MiddleTodoListsComponent extends React.Component {
 }
 
 function mapStateToProps(state) {
-    return { todoLists: state.todoLists }
+    return { todoPage: state.todoPage }
 }
 
 const TodoListsContainer = connect(mapStateToProps, { loadTodoListsThunkCreator })(MiddleTodoListsComponent)

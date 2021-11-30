@@ -3,9 +3,17 @@ import { todoApi } from "../api/todoApi";
 
 const LOAD_TODO = "LOAD_TODO";
 const AUTH_TODO = "AUTH_TODO";
+const EDIT_TODO_LIST = "EDIT_TODO_LIST";
+const EDIT_TODO_ITEM = "EDIT_TODO_ITEM";
 
 let initialState = {
-    todoLists: []
+    todoLists: [{
+        test:"test"
+    }],
+    editTodoList: {
+        id: 0,
+        name: "string"
+    }
 }
 
 const todoReducer = (state = initialState, action) => {
@@ -14,6 +22,13 @@ const todoReducer = (state = initialState, action) => {
         case LOAD_TODO:
             newState.todoLists = action.todoLists;
             return newState;
+
+        case EDIT_TODO_LIST:
+            return newState;
+
+        case EDIT_TODO_ITEM:
+            return newState;
+
         default:
             return newState;
     }
@@ -29,6 +44,10 @@ export function loadTodoListsThunkCreator() {
             dispatch(loadTodoListsActionCreator(data));
         })
     }
+}
+
+export function editTodoListsAcionCreator(id, name) {
+    return { type: EDIT_TODO_LIST, id: id, name: name }
 }
 
 export default todoReducer;
