@@ -37,3 +37,8 @@
 .color-black {
   color:black !important;
 }
+
+.ended-task{
+  background-color: #87d68b;
+  color:#0f7c15;
+}

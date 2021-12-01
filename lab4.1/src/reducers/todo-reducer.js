@@ -7,9 +7,7 @@ const EDIT_TODO_LIST = "EDIT_TODO_LIST";
 const EDIT_TODO_ITEM = "EDIT_TODO_ITEM";
 
 let initialState = {
-    todoLists: [{
-        test:"test"
-    }],
+    todoLists: "test",
     editTodoList: {
         id: 0,
         name: "string"

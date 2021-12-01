@@ -1,5 +1,5 @@
 import { Card, Row, Col, Container } from "react-bootstrap";
-import TodoElement from "./todoElement";
+import TodoElement from "./todoItem";
 import React from "react";
 
 class TodoList extends React.Component {
