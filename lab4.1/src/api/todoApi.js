@@ -9,8 +9,8 @@ const instance = axios.create({
 function getTodoLists() {
     let token = 'Bearer ' + localStorage.getItem("todoToken");
 
-    return instance.get('ToDoList', 
-    { headers: {"Authorization" : token} })
+    return instance.get('ToDoList',
+        { headers: { 'Authorization': token } })
         .then(response => {
             if (response.status === 200) {
                 return response.data;
@@ -19,6 +19,25 @@ function getTodoLists() {
         .catch(error => {
             console.log(error.response.data.error);
         })
+}
+
+function createNewTodoList(name) {
+    let token = 'Bearer ' + localStorage.getItem("todoToken");
+
+    return instance.post('todolists', JSON.stringify({
+        name: name
+    }), {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': token
+        }
+    })
+        .then(response => {
+            if (response.status === 200) {
+                console.log("list created successfully")
+            }
+        })
+        .catch(error => console.error(error))
 }
 
 function authorize() {
@@ -35,7 +54,7 @@ function authorize() {
         })
         .then((json) => {
             localStorage.setItem("todoToken", json.accessToken);
-            console.log("successful authorization ",localStorage.getItem("todoToken"))
+            console.log("successful authorization ", localStorage.getItem("todoToken"))
         })
         .catch(error => console.error(error))
 }

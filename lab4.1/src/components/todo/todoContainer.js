@@ -2,14 +2,18 @@ import { connect } from "react-redux";
 import React from "react";
 import TodoListWrapper from "./todoListWrapper";
 import { loadTodoListsThunkCreator } from "../../reducers/todo-reducer";
+import TodoLegend from "./todoLegend";
 
 class MiddleTodoListsComponent extends React.Component {
     componentDidMount() {
         this.props.loadTodoListsThunkCreator();
-        console.log(this.props);
     }
     render() {
-        return (<TodoListWrapper {...this.props} />)
+        return (<div>
+            <TodoLegend {...this.props}/>
+            <TodoListWrapper {...this.props} />
+        </div>
+        )
     }
 }
 

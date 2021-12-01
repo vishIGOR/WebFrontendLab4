@@ -6,7 +6,6 @@ function TodoRoute() {
         <div className="d-flex flex-column">
             <div className="content">
                 <div className="container-lg">
-                    <TodoLegend/>
                     <TodoListsContainer></TodoListsContainer>
                 </div>
             </div>
