@@ -1,11 +1,10 @@
 import TodoListsContainer from "./todoContainer";
-import TodoLegend from "./todoLegend";
 
 function TodoRoute() {
     return (
         <div className="d-flex flex-column">
             <div className="content">
-                <div className="container-lg">
+                <div className="container-xl">
                     <TodoListsContainer></TodoListsContainer>
                 </div>
             </div>

@@ -33,9 +33,10 @@ export function loadNewsThunkCreator() {
     }
 }
 
-export function setLikeThunkCreator(){
-    return(dispatch) =>{
-        newsApi.setLike().then(data =>{
+export function setLikeThunkCreator(id){
+    return async (dispatch) =>{
+        await newsApi.setLike(id);
+        newsApi.getNews().then(data => {
             dispatch(loadNewsActionCreator(data));
         })
     }

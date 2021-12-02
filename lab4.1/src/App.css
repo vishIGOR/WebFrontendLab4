@@ -1,27 +1,10 @@
-
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 .content {
   flex: 1 0 auto;
 }
 
 .footer {
   background-color: #f5f5f5;
-  height:60px;
+  height: 60px;
   width: 100%;
   flex-shrink: 0;
 
@@ -30,19 +13,19 @@
   align-items: center;
 }
 
-.news-like-symbol:hover{
+.news-like-symbol:hover {
   cursor: pointer;
 }
 
 .color-black {
-  color:black !important;
+  color: black !important;
 }
 
-.ended-task{
+.ended-task {
   background-color: #87d68b;
-  color:#0f7c15;
+  color: #0f7c15;
 }
 
-.rwt__tab  {
+.rwt__tab {
   width: 100%
 }

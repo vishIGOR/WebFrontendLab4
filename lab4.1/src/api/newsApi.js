@@ -26,7 +26,7 @@ function setLike(id) {
     })
         .then(response => {
             if (response.status === 200) {
-                console.log("liked")
+                console.log("liked ", id)
             }
         })
         .catch(error => console.error(error))
