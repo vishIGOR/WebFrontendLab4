@@ -104,51 +104,49 @@ function TodoItem(props) {
                     </Row>
                 </Col>
                 <Modal show={show} onHide={handleClose} dialogClassName="modal-lg">
-                    <Form>
-                        <Modal.Header closeButton>
-                            <Modal.Title>Редактирование элемента ToDo</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                            <Container>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Редактирование элемента ToDo</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <Container>
 
-                                <Row>
-                                    <div className="col-lg-8">
-                                        <Form.Group controlId="update-element-name">
-                                            <Form.Label>Заголовок</Form.Label>
-                                            <Form.Control required type="text" value={state.name} onChange={onFormChange} ref={nameRef} />
-                                        </Form.Group>
-                                    </div>
+                            <Row>
+                                <div className="col-lg-8">
+                                    <Form.Group controlId="update-element-name">
+                                        <Form.Label>Заголовок</Form.Label>
+                                        <Form.Control required type="text" value={state.name} onChange={onFormChange} ref={nameRef} />
+                                    </Form.Group>
+                                </div>
 
-                                    <div className="col-lg-4">
-                                        <Form.Group controlId="update-element-priority">
-                                            <Form.Label>Приоритет</Form.Label>
-                                            <Form.Select value={state.priority} ref={priorityRef} onChange={onFormChange}>
-                                                <option value="0">Обычный</option>
-                                                <option value="1">Важный</option>
-                                                <option value="2">Критический</option>
-                                            </Form.Select>
-                                        </Form.Group>
-                                    </div>
+                                <div className="col-lg-4">
+                                    <Form.Group controlId="update-element-priority">
+                                        <Form.Label>Приоритет</Form.Label>
+                                        <Form.Select value={state.priority} ref={priorityRef} onChange={onFormChange}>
+                                            <option value="0">Обычный</option>
+                                            <option value="1">Важный</option>
+                                            <option value="2">Критический</option>
+                                        </Form.Select>
+                                    </Form.Group>
+                                </div>
 
-                                    <div className="col-12">
-                                        <Form.Group controlId="update-element-desciption">
-                                            <Form.Label>Описание</Form.Label>
-                                            <Form.Control required as="textarea" rows={3} value={state.description} onChange={onFormChange} ref={descriptionRef} />
-                                        </Form.Group>
-                                    </div>
-                                </Row>
+                                <div className="col-12">
+                                    <Form.Group controlId="update-element-desciption">
+                                        <Form.Label>Описание</Form.Label>
+                                        <Form.Control required as="textarea" rows={3} value={state.description} onChange={onFormChange} ref={descriptionRef} />
+                                    </Form.Group>
+                                </div>
+                            </Row>
 
-                            </Container>
-                        </Modal.Body>
-                        <Modal.Footer>
-                            <Button variant="secondary" onClick={handleClose}>
-                                Отмена
-                            </Button>
-                            <Button variant="success" type="submit" onClick={updateTodoListListener}>
-                                Сохранить изменения
-                            </Button>
-                        </Modal.Footer>
-                    </Form>
+                        </Container>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={handleClose}>
+                            Отмена
+                        </Button>
+                        <Button variant="success" onClick={updateTodoListListener}>
+                            Сохранить изменения
+                        </Button>
+                    </Modal.Footer>
                 </Modal>
             </div>
         )
