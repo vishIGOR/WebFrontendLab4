@@ -63,7 +63,7 @@ function CreateTodoItem(props) {
                 </Card.Body>
                 <Card.Footer>
                     <Button variant="secondary" onClick={clearFormListener}>Очистить</Button>{" "}
-                    <Button variant="success" type="submit" onClick={createTodoItemListener}>Создать</Button>
+                    <Button variant="success" onClick={createTodoItemListener}>Создать</Button>
                 </Card.Footer>
             </Form>
         </Card>

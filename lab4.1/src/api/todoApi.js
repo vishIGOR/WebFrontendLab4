@@ -34,6 +34,13 @@ function getTodoLists() {
             if (response.status === 200) {
                 return response.data;
             }
+            else {
+                return authorize()
+                    .then(
+                        getTodoLists()
+                    )
+
+            }
         })
         .catch(error => {
             console.log(error.response.data.error);
@@ -55,6 +62,13 @@ function createNewTodoList(name) {
             if (response.status === 200) {
                 console.log("list created successfully")
             }
+            else {
+                return authorize()
+                    .then(
+                        createNewTodoList(name)
+                    )
+
+            }
         })
         .catch(error => console.error(error))
 }
@@ -75,6 +89,13 @@ function updateTodoList(id, name) {
             if (response.status === 200) {
                 console.log("list updated successfully")
             }
+            else {
+                return authorize()
+                    .then(
+                        updateTodoList(id, name)
+                    )
+
+            }
         })
         .catch(error => console.error(error))
 }
@@ -94,6 +115,13 @@ function deleteTodoList(id) {
         .then(response => {
             if (response.status === 200) {
                 console.log("list deleted successfully")
+            }
+            else {
+                return authorize()
+                    .then(
+                        deleteTodoList(id)
+                    )
+
             }
         })
         .catch(error => console.error(error))
@@ -116,6 +144,13 @@ function createNewTodoItem(name, description, priority, listId) {
         .then(response => {
             if (response.status === 200) {
                 console.log("item created successfully")
+            }
+            else {
+                return authorize()
+                    .then(
+                        createNewTodoItem(name, description, priority, listId)
+                    )
+
             }
         })
         .catch(error => console.error(error))
@@ -140,6 +175,13 @@ function updateTodoItem(id, name, description, priority, listId) {
             if (response.status === 200) {
                 console.log("item updated successfully")
             }
+            else {
+                return authorize()
+                    .then(
+                        updateTodoItem(id, name, description, priority, listId)
+                    )
+
+            }
         })
         .catch(error => console.error(error))
 }
@@ -161,6 +203,13 @@ function deleteTodoItem(id, ownerId) {
             if (response.status === 200) {
                 console.log("item deleted successfully")
             }
+            else {
+                return authorize()
+                    .then(
+                        deleteTodoItem(id, ownerId)
+                    )
+
+            }
         })
         .catch(error => console.error(error))
 }
@@ -181,6 +230,13 @@ function setTodoItemAsChecked(id, ownerId) {
             if (response.status === 200) {
                 console.log("item checked successfully")
             }
+            else {
+                return authorize()
+                    .then(
+                        setTodoItemAsChecked(id, ownerId)
+                    )
+
+            }
         })
         .catch(error => console.error(error))
 }
@@ -194,5 +250,5 @@ export const todoApi = {
     createNewTodoItem: createNewTodoItem,
     updateTodoItem: updateTodoItem,
     deleteTodoItem: deleteTodoItem,
-    setTodoItemAsChecked:setTodoItemAsChecked
+    setTodoItemAsChecked: setTodoItemAsChecked
 }

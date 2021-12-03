@@ -17,9 +17,9 @@ class TodoLegend extends React.Component {
                         <h5>Приоритеты элементов ToDo:</h5>
                         <div className="justify-content-start flex-row d-flex text-uppercase container-fluid ">
                             <Row>
-                                <Badge bg="light" text="dark" className="col-auto"><h6>обычный</h6></Badge>
-                                <Badge bg="warning" text="dark" className="col-auto"><h6>важный</h6></Badge>
-                                <Badge bg="danger" text="dark" className="col-auto"><h6>критический</h6></Badge>
+                                <Badge bg="light" text="dark" className="col-auto border me-1"><h6>обычный</h6></Badge>
+                                <Badge bg="warning" text="dark" className="col-auto border me-1"><h6>важный</h6></Badge>
+                                <Badge bg="danger" text="dark" className="col-auto border"><h6>критический</h6></Badge>
                             </Row>
                         </div>
                     </Card.Body>

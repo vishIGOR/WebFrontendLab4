@@ -39,7 +39,7 @@ function CreateTodoList() {
                 </Card.Body>
                 <Card.Footer>
                     <Button variant="secondary" onClick={clearFormListener}>Очистить</Button>{" "}
-                    <Button variant="success" type="submit" onClick={createListListener} >Создать</Button>
+                    <Button variant="success" onClick={createListListener} >Создать</Button>
                 </Card.Footer>
             </Form>
         </Card>
