@@ -27,7 +27,10 @@ function TodoItem(props) {
     }
 
     const updateTodoListListener = () => {
-        dispatch(updateTodoItemThunkCreator(state.id, state.name, state.description, state.priority, state.listId));
+        if (!(state.name === "" || state.description === "")) {
+            dispatch(updateTodoItemThunkCreator(state.id, state.name, state.description, state.priority, state.listId));
+        }
+
         setShow(false);
     }
 

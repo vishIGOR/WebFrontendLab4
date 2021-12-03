@@ -21,7 +21,10 @@ function CreateTodoItem(props) {
     }
 
     const createTodoItemListener = () => {
-        dispatch(createNewTodoItemThunkCreator(state.name, state.description, state.priority, state.listId));
+        if (!(state.name === "" || state.description === "")) {
+            dispatch(createNewTodoItemThunkCreator(state.name, state.description, state.priority, state.listId));
+        }
+
     }
 
     return (

@@ -4,24 +4,15 @@ import { todoApi } from "../api/todoApi";
 const LOAD_TODO = "LOAD_TODO";
 
 const CREATE_TODO_LIST = "CREATE_TODO_LIST";
-// const UPDATE_TODO_LIST = "UPDATE_TODO_LIST";
-// const DELETE_TODO_LIST = "DELETE_TODO_LIST";
 
 const CREATE_TODO_ITEM = "CREATE_TODO_ITEM";
 const UPDATE_TODO_ITEM = "UPDATE_TODO_ITEM";
 
 let initialState = {
     todoLists: "test",
-    // updateTodoList: {
-    //     id: 0,
-    //     name: ""
-    // },
     createTodoList: {
         name: ""
     },
-    // deleteTodoList: {
-    //     id: 0
-    // }
     createTodoItem: {
         name: "",
         description: "",
@@ -48,14 +39,6 @@ const todoReducer = (state = initialState, action) => {
             newState.todoLists = [...state.todoLists];
             newState.createTodoList = { name: action.name };
             return newState;
-
-        // case UPDATE_TODO_LIST:
-        //     return newState;
-
-        // case DELETE_TODO_LIST:
-        //     newState.todoLists=[...state.todoLists];
-        //     newState.deleteTodoList = {id: action.id};
-        //     return newState;
 
         case CREATE_TODO_ITEM:
             newState.todoLists = [...state.todoLists];
@@ -109,9 +92,6 @@ export function createNewTodoListActionCreator(name) {
     return { type: CREATE_TODO_LIST, name: name }
 }
 
-// export function deleteTodoListActionCreator(id) {
-//     return { type: DELETE_TODO_LIST, id: id }
-// }
 
 export function deleteTodoListThunkCreator(id) {
     return async (dispatch) => {
@@ -167,9 +147,5 @@ export function setTodoItemAsCheckedThunkCreator(id, ownerId) {
     }
 }
 
-
-// export function updateTodoListsAcionCreator(id, name) {
-//     return { type: UPDATE_TODO_LIST, id: id, name: name }
-// }
 
 export default todoReducer;

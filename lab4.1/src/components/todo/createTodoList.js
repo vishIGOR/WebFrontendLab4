@@ -18,7 +18,10 @@ function CreateTodoList() {
     }
 
     const createListListener = () => {
-        dispatch(createNewTodoListThunkCreator(state.name));
+        if (!(state.name === "")) {
+            dispatch(createNewTodoListThunkCreator(state.name));
+        }
+
     }
 
     return (

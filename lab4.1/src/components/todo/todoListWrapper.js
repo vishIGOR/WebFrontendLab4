@@ -3,7 +3,6 @@ import { Tabs, Tab, Row, Card } from "react-bootstrap";
 import "./../../App.css";
 import DeleteTodoList from "./deleteTodoList";
 import TodoItem from "./todoItem";
-// import TodoList from "./todoList";
 
 
 class TodoListWrapper extends React.Component {
@@ -18,7 +17,6 @@ class TodoListWrapper extends React.Component {
                 <Tabs defaultActiveKey={this.props.todoPage.todoLists[0].id} id="todo-tabs" className="card-header nav-justified flex-column flex-md-row ps-3 pe-3 pb-0" >
                     {
                         this.props.todoPage.todoLists.map((value) => {
-                            // return <TodoList id={value.id} name={value.name} ownerId={value.ownerId} items={value.items} key={value.id}/>
                             return <Tab tabClassName="color-black" eventKey={value.id} title={value.name} key={value.id}>
                                 <Card.Body className="container-fluid">
                                     <Row>
