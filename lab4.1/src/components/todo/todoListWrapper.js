@@ -12,6 +12,10 @@ class TodoListWrapper extends React.Component {
             return <div>ToDo листы подгружаются...</div>
         }
 
+        if (this.props.todoPage.todoLists.length === 0) {
+            return <div>ToDo листов не обнаружено...</div>
+        }
+        
         return (
             <Card className="mt-4">
                 <Tabs defaultActiveKey={this.props.todoPage.todoLists[0].id} id="todo-tabs" className="card-header nav-justified flex-column flex-md-row ps-3 pe-3 pb-0" >
